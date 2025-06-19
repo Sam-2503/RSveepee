@@ -27,7 +27,7 @@ const EventCard = ({ event, onJoin, onDetails }) => (
     </button>
     {typeof onDetails === 'function' && (
       <button className="btn btn-outline btn-sm w-full" onClick={() => onDetails(event)}>
-        Details
+        Registration Data
       </button>
     )}
   </div>
