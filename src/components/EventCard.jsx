@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 const truncate = (str, n) =>
-  str && str.length > n ? str.slice(0, n) + "..." : str;
+  str && str.length > n ? str.slice(0, n) + '...' : str;
 
 const EventCard = ({ event, onJoin, onDetails }) => (
   <div className="flex flex-col items-center bg-base-200 rounded-lg shadow p-4 w-full max-w-xs">
@@ -22,21 +22,15 @@ const EventCard = ({ event, onJoin, onDetails }) => (
         {truncate(event.description, 60)}
       </div>
     )}
-    <button
-      className="btn btn-secondary w-full mb-2"
-      onClick={() => onJoin(event)}
-    >
+    <button className="btn btn-secondary w-full mb-2" onClick={() => onJoin(event)}>
       JOIN US
     </button>
-    {typeof onDetails === "function" && (
-      <button
-        className="btn btn-outline btn-sm w-full"
-        onClick={() => onDetails(event)}
-      >
+    {typeof onDetails === 'function' && (
+      <button className="btn btn-outline btn-sm w-full" onClick={() => onDetails(event)}>
         Details
       </button>
     )}
   </div>
 );
 
-export default EventCard;
+export default EventCard; 

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useAuth } from "../AuthContext";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useAuth } from '../AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
-  const [form, setForm] = useState({ email: "", password: "" });
-  const [error, setError] = useState("");
+  const [form, setForm] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -14,12 +14,12 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    setError('');
     try {
       await login(form.email, form.password);
-      navigate("/");
+      navigate('/');
     } catch (err) {
-      setError("Invalid email or password");
+      setError('Invalid email or password');
     }
   };
 
@@ -47,19 +47,14 @@ const Login = () => {
             onChange={handleChange}
             required
           />
-          <button type="submit" className="btn btn-primary w-full">
-            Login
-          </button>
+          <button type="submit" className="btn btn-primary w-full">Login</button>
         </form>
         <div className="mt-4 text-center">
-          Don't have an account?{" "}
-          <a href="/register" className="text-blue-600">
-            Register
-          </a>
+          Don't have an account? <a href="/register" className="text-blue-600">Register</a>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Login; 

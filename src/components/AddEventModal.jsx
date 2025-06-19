@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 const AddEventModal = ({ open, onClose, onSubmit }) => {
-  const [form, setForm] = useState({ title: "", description: "", image: "" });
+  const [form, setForm] = useState({ title: '', description: '', image: '' });
 
   useEffect(() => {
-    if (open) setForm({ title: "", description: "", image: "" });
+    if (open) setForm({ title: '', description: '', image: '' });
   }, [open]);
 
   const handleChange = (e) => {
@@ -14,7 +14,7 @@ const AddEventModal = ({ open, onClose, onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(form);
-    setForm({ title: "", description: "", image: "" });
+    setForm({ title: '', description: '', image: '' });
   };
 
   if (!open) return null;
@@ -62,4 +62,4 @@ const AddEventModal = ({ open, onClose, onSubmit }) => {
   );
 };
 
-export default AddEventModal;
+export default AddEventModal; 

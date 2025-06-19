@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Navbar = ({ onAddEvent }) => (
   <div className="navbar bg-base-200 shadow mb-6">
@@ -13,4 +13,4 @@ const Navbar = ({ onAddEvent }) => (
   </div>
 );
 
-export default Navbar;
+export default Navbar; 

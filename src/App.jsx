@@ -1,8 +1,8 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import { useAuth } from "./AuthContext";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import EventListPage from "./EventListPage";
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useAuth } from './AuthContext';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import EventListPage from './EventListPage';
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();

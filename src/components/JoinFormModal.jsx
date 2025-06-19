@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 const JoinFormModal = ({ open, onClose, onSubmit, event }) => {
-  const [form, setForm] = useState({ name: "", email: "", phone: "" });
+  const [form, setForm] = useState({ name: '', email: '', phone: '' });
 
   useEffect(() => {
-    if (open) setForm({ name: "", email: "", phone: "" });
+    if (open) setForm({ name: '', email: '', phone: '' });
   }, [open, event]);
 
   const handleChange = (e) => {
@@ -14,7 +14,7 @@ const JoinFormModal = ({ open, onClose, onSubmit, event }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(form);
-    setForm({ name: "", email: "", phone: "" });
+    setForm({ name: '', email: '', phone: '' });
   };
 
   if (!open) return null;
@@ -65,4 +65,4 @@ const JoinFormModal = ({ open, onClose, onSubmit, event }) => {
   );
 };
 
-export default JoinFormModal;
+export default JoinFormModal; 
