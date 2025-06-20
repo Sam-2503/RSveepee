@@ -4,7 +4,7 @@ import { neon } from '@neondatabase/serverless';
 import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-const path = require('path');
+import path from 'path';
 
 dotenv.config();
 
