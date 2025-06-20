@@ -4,11 +4,12 @@ import { neon } from '@neondatabase/serverless';
 import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+const path = require('path');
 
 dotenv.config();
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const JWT_SECRET = process.env.JWT_SECRET || 'supersecretkey';
 
 app.use(cors());
@@ -144,6 +145,14 @@ app.get('/events/:id/details', async (req, res) => {
     console.error(err);
     res.status(500).json({ error: 'Failed to fetch event details' });
   }
+});
+
+// Serve static files from the React build
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Catch-all handler to serve index.html for any route not handled by the API
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Ensure tables, then start server
